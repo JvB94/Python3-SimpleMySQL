@@ -71,3 +71,13 @@ class SimpleMysql:
             self.__close()
 
             return self.__session.lastrowid
+
+        elif mode == "UPDATE":
+            self.__open()
+            self.__session.execute(query)
+            if commit == True:
+                self.__connection.commit()
+
+            update_rows = self.__session.rowcount
+            self.__close()
+            return update_rows
