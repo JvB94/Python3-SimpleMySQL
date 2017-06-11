@@ -81,3 +81,4 @@ class SimpleMysql:
             update_rows = self.__session.rowcount
             self.__close()
             return update_rows
+        
